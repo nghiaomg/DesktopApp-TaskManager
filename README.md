@@ -1,6 +1,6 @@
 # 📋 Task Manager Desktop App
 
-![Task Manager Preview](src/assets/preview.png)
+![Task Manager Preview](https://ik.imagekit.io/0lpnflx37/Me/Task%20Manager/Screenshot%202024-10-26%20213207.png)
 
 ## 🌟 Giới thiệu
 
