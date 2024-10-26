@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quản lý công việc</title>
+    <link rel="icon" type="image/x-icon" href="src/assets/logo.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <nav class="navbar is-primary is-fixed-top" role="navigation">
+        <div class="navbar-brand">
+            <div class="navbar-item">
+                <h1 class="title is-4 has-text-white">Quản lý công việc</h1>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section">
+            <div class="card mb-5">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-plus"></i>
+                            </span>
+                            <span>Thêm công việc mới</span>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <form id="taskForm">
+                        <div class="form-container">
+                            <div class="input-row">
+                                <!-- Tên công việc -->
+                                <div class="field">
+                                    <label class="label">Tên công việc</label>
+                                    <div class="control has-icons-left">
+                                        <input type="text" id="taskName" class="input" placeholder="Nhập tên công việc" required>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-tasks"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Deadline -->
+                                <div class="field">
+                                    <label class="label">Deadline</label>
+                                    <div class="control has-icons-left">
+                                        <input type="datetime-local" id="deadline" class="input">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Trạng thái -->
+                                <div class="field">
+                                    <label class="label">Trạng thái</label>
+                                    <div class="control has-icons-left">
+                                        <div class="select is-fullwidth">
+                                            <select id="status">
+                                                <option value="pending">Đang chờ</option>
+                                                <option value="in-progress">Đang thực hiện</option>
+                                                <option value="completed">Hoàn thành</option>
+                                            </select>
+                                        </div>
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-stream"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="description-row">
+                                <!-- Mô tả -->
+                                <div class="field description-field">
+                                    <label class="label">Mô tả</label>
+                                    <div class="control">
+                                        <textarea id="taskDescription" 
+                                                class="textarea" 
+                                                placeholder="Nhập mô tả công việc"
+                                                rows="2"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="field button-field">
+                                <div class="control">
+                                    <button type="submit" class="button is-primary">
+                                        <span class="icon">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                        <span>Thêm công việc</span>
+                                    </button>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <header class="card-header">
+                    <p class="card-header-title">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-chart-line"></i>
+                            </span>
+                            <span>Thống kê hoàn thành công việc</span>
+                        </span>
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div class="contributions-wrapper">
+                        <div class="contributions-header">
+                            <div class="months-header"></div>
+                        </div>
+                        <div class="contributions-graph"></div>
+                        <div class="contributions-footer">
+                            <span class="contribution-label">Ít hơn</span>
+                            <ul class="contribution-colors">
+                                <li class="contribution-cell"></li>
+                                <li class="contribution-cell level-1"></li>
+                                <li class="contribution-cell level-2"></li>
+                                <li class="contribution-cell level-3"></li>
+                                <li class="contribution-cell level-4"></li>
+                            </ul>
+                            <span class="contribution-label">Nhiều hơn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Danh sách công việc</p>
+                </header>
+                
+                <div class="card-content">
+                    <div class="level">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <div class="field is-horizontal">
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <div class="control">
+                                                <div class="select">
+                                                    <select id="monthFilter">
+                                                        <option value="">Tất cả tháng</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="control">
+                                                <div class="select">
+                                                    <select id="statusFilter">
+                                                        <option value="">Tất cả trạng thái</option>
+                                                        <option value="pending">Đang chờ</option>
+                                                        <option value="in-progress">Đang thực hiện</option>
+                                                        <option value="completed">Hoàn thành</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <div class="buttons">
+                                    <button id="selectAllBtn" class="button">
+                                        <span class="icon">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                        <span>Chọn tất cả</span>
+                                    </button>
+                                    <button id="deleteSelectedBtn" class="button is-danger">
+                                        <span class="icon">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span>Xóa đã chọn</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="taskList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Chỉnh sửa công việc</p>
+                <button class="delete" aria-label="close" onclick="closeEditModal()"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="editForm">
+                    <input type="hidden" id="editTaskId">
+                    <div class="field">
+                        <label class="label">Tên công việc</label>
+                        <div class="control">
+                            <input type="text" id="editTaskName" class="input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <label class="label">Mô tả</label>
+                        <div class="control">
+                            <textarea id="editTaskDescription" class="textarea" rows="3"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button type="submit" form="editForm" class="button is-primary">Lưu thay đổi</button>
+                <button type="button" class="button" onclick="closeEditModal()">Hủy</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="src/renderer.js"></script>
+</body>
+</html>

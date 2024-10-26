@@ -1,0 +1,500 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.add-task {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+.filters {
+    display: flex;
+    gap: 16px;
+}
+
+.task-item {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.pending {
+    border-left: 4px solid #faad14;
+}
+
+.in-progress {
+    border-left: 4px solid #1890ff;
+}
+
+.completed {
+    border-left: 4px solid #52c41a;
+}
+
+.status-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.task-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.bulk-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.task-content {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.task-details {
+    flex: 1;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+.task-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 60px;
+    padding: 8px;
+}
+
+.task-description {
+    color: rgba(0,0,0,0.45);
+    margin: 8px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.45);
+    z-index: 1000;
+}
+
+.ant-modal-content {
+    background: #fff;
+    margin: 100px auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 520px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #666;
+}
+
+.modal .form-group {
+    margin-bottom: 15px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Style cho textarea và icon */
+.control.has-icons-left .textarea {
+    padding-left: 2.5em;
+}
+
+.control.has-icons-left .icon.is-left {
+    position: absolute;
+    top: 0.75em;
+    left: 0.75em;
+    z-index: 4;
+    height: auto;
+}
+
+/* Đảm bảo textarea có chiều cao cố định */
+.textarea.has-fixed-size {
+    min-height: 6em;
+    resize: vertical;
+}
+
+/* Căn chỉnh columns để cân đối */
+.columns {
+    align-items: stretch;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.control {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Thêm styles để cân đối khoảng cách */
+.card-content {
+    padding: 1.5rem;
+}
+
+.columns {
+    margin-bottom: 1rem;
+}
+
+.column {
+    padding: 0.75rem;
+}
+
+/* Style cho textarea */
+.textarea.has-fixed-size {
+    min-height: 6em;
+    resize: vertical;
+}
+
+.control.has-icons-left .textarea {
+    padding-left: 2.5em;
+}
+
+.control.has-icons-left .icon.is-left {
+    position: absolute;
+    top: 0.75em;
+    left: 0.75em;
+    z-index: 4;
+}
+
+/* Đảm bảo các input cùng kích thước */
+.input, .select select {
+    height: 2.5em;
+}
+
+/* Căn chỉnh margins */
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+/* Style cho form thêm công việc */
+.card-content {
+    padding: 1.5rem;
+}
+
+/* Căn chỉnh các field */
+.field:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* Style cho input và select */
+.input, .select select {
+    height: 2.5em;
+}
+
+/* Style cho textarea */
+.textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Căn chỉnh icon trong input */
+.control.has-icons-left .icon {
+    height: 2.5em;
+}
+
+.control.has-icons-left .input,
+.control.has-icons-left .select select {
+    padding-left: 2.5em;
+}
+
+/* Loại bỏ margin bottom mặc định của columns */
+.columns.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+/* Style cho button */
+.button.is-primary {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .columns {
+        margin: 0;
+    }
+    .column {
+        padding: 0.5rem;
+    }
+    .field.is-grouped.is-grouped-right {
+        justify-content: center;
+    }
+}
+
+/* Container cho form */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Style cho hàng input */
+.input-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.input-row .field {
+    flex: 1;
+    min-width: 0; /* Để tránh overflow */
+}
+
+/* Style cho hàng mô tả và nút */
+.description-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.description-field {
+    flex: 1;
+}
+
+.button-field {
+    display: flex;
+    align-items: center;
+    padding-top: 1.85rem; /* Căn chỉnh với label của textarea */
+}
+
+/* Style cho input và select */
+.input, .select select {
+    height: 2.5em;
+}
+
+/* Style cho textarea */
+.textarea {
+    height: 2.5em;
+    min-height: 2.5em;
+    resize: none;
+}
+
+/* Căn chỉnh icon trong input */
+.control.has-icons-left .icon {
+    height: 2.5em;
+}
+
+.control.has-icons-left .input,
+.control.has-icons-left .select select {
+    padding-left: 2.5em;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .input-row {
+        flex-direction: column;
+    }
+    
+    .description-row {
+        flex-direction: column;
+    }
+    
+    .button-field {
+        padding-top: 0;
+        justify-content: flex-end;
+    }
+}
+
+/* Contributions Graph */
+.contributions-wrapper {
+    padding: 1rem;
+}
+
+.contributions-header {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.months-header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.contributions-graph {
+    display: grid;
+    grid-template-columns: auto repeat(53, 1fr);
+    gap: 3px;
+    font-size: 0.8rem;
+}
+
+.weekday-label {
+    grid-column: 1;
+    text-align: right;
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+    color: #767676;
+    height: 15px;
+    line-height: 15px;
+}
+
+.contribution-cell {
+    width: 15px;
+    height: 15px;
+    background-color: #ebedf0;
+    border-radius: 2px;
+}
+
+.contribution-cell[data-count] {
+    cursor: pointer;
+}
+
+.contribution-cell[data-count]:hover {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contribution-cell.level-1 {
+    background-color: #9be9a8;
+}
+
+.contribution-cell.level-2 {
+    background-color: #40c463;
+}
+
+.contribution-cell.level-3 {
+    background-color: #30a14e;
+}
+
+.contribution-cell.level-4 {
+    background-color: #216e39;
+}
+
+.contributions-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+
+.contribution-colors {
+    display: flex;
+    gap: 3px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contribution-label {
+    font-size: 0.8rem;
+    color: #767676;
+}
+
+/* Tooltip cho contribution cells */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background-color: #000;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+[data-tooltip]:hover:before {
+    visibility: visible;
+    opacity: 1;
+}
