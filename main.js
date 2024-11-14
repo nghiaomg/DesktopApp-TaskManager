@@ -27,7 +27,12 @@ ipcMain.handle('update-task', (event, updatedTask) => {
     const tasks = store.get('tasks') || []
     const index = tasks.findIndex(task => task.id === updatedTask.id)
     if (index !== -1) {
-        tasks[index] = { ...tasks[index], ...updatedTask }
+        const oldTask = tasks[index]
+        tasks[index] = { 
+            ...oldTask,
+            ...updatedTask,
+            deadline: updatedTask.status !== oldTask.status ? new Date().toISOString() : oldTask.deadline
+        }
         store.set('tasks', tasks)
         return true
     }
